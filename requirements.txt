@@ -1,0 +1,4 @@
+ultralytics
+label-studio
+pytube
+tqdm
