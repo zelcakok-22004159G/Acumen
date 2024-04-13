@@ -9,7 +9,10 @@ Project structure:
             {task_name}/ <-- All processed data files, e.g. pngs, npys, etc.
             ...
     models/
-        {task_name}/ <-- All models, e.g. identify_players.h5
+        train/
+            {task_name}/ <-- All models, e.g. identify_players.h5
+        fine_tune/
+            {task_name}/ <-- All fine-tuned models, e.g. identify_players-2021-09-01T12:00:00
     uitls/
     setup.py
     index.py
@@ -41,6 +44,8 @@ def setup():
     models_dir = 'models'
     if not os.path.exists(models_dir):
         mkdir(models_dir)
+    mkdir(os.path.join(models_dir, 'train'))
+    mkdir(os.path.join(models_dir, 'fine_tune'))
 
     # Create the utils directory
     utils_dir = 'utils'
