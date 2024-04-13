@@ -46,7 +46,7 @@ class Pretrained(Enum):
 
     @classmethod
     def fine_tune_detection(cls, fine_tune_name, source, **kwargs):
-        current_datetime = datetime.datetime.now().isoformat()
+        current_datetime = datetime.datetime.now().isoformat().replace(":", "-")
         project_folder = f"{MODELS_DIR}/train/{fine_tune_name}-{current_datetime}"
         mkdir(project_folder)
         model = cls.get_pretrained_model(cls.DETECT)
